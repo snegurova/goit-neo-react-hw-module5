@@ -28,12 +28,6 @@ const MoviesPage = () => {
     setSearchParams({ query });
     setError(null);
     setMovies(null);
-    try {
-      const movies = await getMoviesBySearch(query);
-      setMovies(movies);
-    } catch {
-      setError('Failed to fetch movies');
-    }
   };
 
   return (

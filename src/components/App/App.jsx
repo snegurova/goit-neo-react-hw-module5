@@ -1,6 +1,6 @@
 import styles from './App.module.css';
 import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
@@ -16,7 +16,7 @@ const NotFoundPage = lazy(() =>
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Navigation />
       <div className={styles.container}>
         <Suspense fallback={<div>Loading...</div>}>
@@ -31,7 +31,7 @@ const App = () => {
           </Routes>
         </Suspense>
       </div>
-    </Router>
+    </>
   );
 };
 
